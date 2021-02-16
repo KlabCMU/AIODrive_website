@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <title>All-In-One Drive</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+    
+    <main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about-group-name">Sensor Setup and Data Collection</h1>
+            </div>
+        </div>
+        
+        <h4><strong>Sensor Setup</strong></h4>
+        <p>All data in AIODrive dataset is collected under the sensor configuration shown in the figure below, which consists of 5 high-resolution RGB cameras including 1 stereo pair; 5 depth cameras (located at the same places as the RGB cameras), 1000 meter range LiDAR at multiple levels of density (up to 4M points), 1000 meter range SPAD-LiDAR, Radar, IMU, and GPS. Four of the sensors (camera, LiDAR, SPAD-LiDAR, Radar) have 360&#176; horizontal coverage. </p>
+        <img src="resources/sensor/setup.png" style="display:block; width:70%; margin-left:auto; margin-right:auto;">
+        
+        <div class="row">
+        <div class="col-md-6">
+            <h5>5x high-resolution RGB cameras:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage: left, right, front left, front right, back, each camera has 120&#176; field of view</li>
+            <li>1920 × 720 resolution</li>
+            <li>Images are uncompressed in PNG uint8 format</li>
+            <li>Include one stereo pair in front with a baseline of 0.8 meters</li>
+            </ul>
+            
+            <h5>5x high-resolution depth cameras:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage same as above RGB cameras</li>
+            <li>1920 × 720 resolution</li>
+            <li>Images are uncompressed in PNG uint8 format</li>
+            <li>Range of depth: 1000 meters</li>
+            </ul>
+            
+            <h5>1x Radar:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage, +40&#176; to -20 &#176; vertical field of view</li>
+            <li>Up to 100 thousand points per Second</li>
+            <li>Range of depth: 1000 meters</li>
+            <li>Point cloud with velocity measurement stored in float32 format</li>
+            </ul>
+            
+            <h5>1x IMU/GPS:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-6">
+            <h5>1x spinning Velodyne-64 LiDAR:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage, +2&#176; to -24.5 &#176; vertical field of view</li>
+            <li>64 channels</li>
+            <li>Up to 2.2 million points per Second</li>
+            <li>Range of depth: 120 meters</li>
+            <li>Point cloud stored in float32 format</li>
+            </ul>
+            
+            <h5>3x spinning long-range high-density LiDAR:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage, +90&#176; to -90 &#176; vertical field of view</li>
+            <li>128/800/1200 channels</li>
+            <li>Up to 2.2/10/15 million points per Second</li>
+            <li>Range of depth: 1000 meters</li>
+            <li>Point cloud stored in float32 format</li>
+            </ul>
+            
+            <h5>1x long-range high-density SPAD-LiDAR:</h5>
+            <ul>
+            <li>10Hz capture frequency</li>
+            <li>360&#176; horizontal coverage, +70&#176; to -70 &#176; vertical field of view</li>
+            <li>700 channels</li>
+            <li>Up to 10 million points per Second</li>
+            <li>Range of depth: 1000 meters</li>
+            <li>Raw sensor data is stored as a 3D tensor representing photon counts</li>
+            <li>Top-2 strongest point cloud returns are stored in float32 format</li>
+            </ul>
+        </div>
+        </div>
+        <hr class="featurette-divider">
+        
+        <h4><strong>Scene Map and Data Collection</strong></h4>
+        <hr class="featurette-divider">
+                
+        <h4><strong>High-Density and Long-Range Point Cloud</strong></h4>
+<!--
+        <p>
+            The All-in-One Drive (AIODrive) is a large-scale comprehensive perception dataset for autonomous driving developed by Carnegie Mellon University in order to innovate multi-sensor multi-task perception systems for autonomous driving. Though various driving datasets have been released to advance perception systems, these datasets often have different objectives and provide different annotations, sensors and environmental variations such as 3D segmentation (SemanticKITTI), rich maps (Argoverse), radar sensing (nuScenes), high-speed driving (A*3D), adverse weather and large-scale data (Waymo). In contrast, our goal is to build a comprehensive dataset that combines the strengths of all existing perception datasets, in order to further innovate multi-sensor multi-task perception systems. To that end, our AIODrive dataset provides the most comprehensive sensing modalities, support annotations for all mainstream perception tasks and collect diverse driving environmental variations. Additionally, one unique feature of our AIODrive dataset is that we provide various point cloud data such as point cloud generated from SPAD-LiDAR and point cloud with different density levels (beyond the density of normal Velodyne-64 LiDAR), which we hope can encourage research investigating how much the point cloud density will affect the performance of perception systems.
+        </p>
+-->
+        <div class="row">
+<!--        <div class="col-md-3">-->
+<!--            <img src="resources/sensor/longrange.png" style="width:100%">-->
+<!--        </div>-->
+        <div class="col-md-12">
+            <img src="resources/sensor/highdensity.png" style="width:100%">
+        </div>
+        </div>
+        <hr class="featurette-divider">        
+    </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="prism.js"></script>
+    <script src="prism-bibtex.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            make_navbar("Home");
+            insert_footer();
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <title>All-In-One Drive</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="about-group-name">Team</h1>
+                    <p>The AIODrive dataset is developed and maintained by a team from the Carnegie Mellon University.</p> 
+                </div>
+            </div>
+            
+            <h4><strong>Principal Investigators</strong></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/kris.jpg" height="200" width="150"></div>
+                    <div class="about-name">Kris Kitani<br>Associate Professor</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=yv3sH74AAAAJ&hl=en" target="_blank">Scholar</a>,&nbsp 
+                        <a href="http://www.cs.cmu.edu/~kkitani/" target="_blank">Website</a>
+                    </div><br>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/matt.jpg" height="200" width="150"></div>
+                    <div class="about-name">Matthew O'Toole<br>Assistant Professor</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=0GLMGTEAAAAJ&hl=en" target="_blank">Scholar</a>,&nbsp 
+                        <a href="http://www.cs.cmu.edu/~motoole2/" target="_blank">Website</a>
+                    </div><br>
+                </div>
+            </div>
+                
+            <h4><strong>Students</strong></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/xinshuo.jpg" height="200" width="150"></div>
+                    <div class="about-name">Xinshuo Weng, Ph.D. Student<br>Project lead</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=dthSEsoAAAAJ&hl=en" target="_blank">Scholar</a>,&nbsp 
+                        <a href="http://www.xinshuoweng.com" target="_blank">Website</a>,&nbsp 
+                        <a href="https://github.com/xinshuoweng/" target="_blank">GitHub</a> 
+                    </div><br>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/yunze.png" height="200" width="150"></div>
+                    <div class="about-name">Yunze Man, M.S. Student<br>SPAD simulation & 3D detection</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=xvQIEKAAAAAJ&hl=en" target="_blank">Scholar</a>,&nbsp 
+                        <a href="https://yunzeman.github.io/" target="_blank">Website</a>
+                    </div><br>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/jinhyung.jpeg" height="200" width="150"></div>
+                    <div class="about-name">Jinhyung Park, Undergraduate<br>3D detection baseline & analysis</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=L3Ea5NIAAAAJ&hl=en" target="_blank">Scholar</a>
+                    </div><br>
+                </div>
+            </div>
+            
+            <h4><strong>Past Contributors</strong></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="about-img"><img src="resources/about/dazhi.jpeg" height="200" width="150"></div>
+                    <div class="about-name">Dazhi Cheng, M.S. Student (Now Pony.ai)<br>3D detection baseline & analysis</div>
+                    <div class="about-links">
+                        <a href="https://scholar.google.com/citations?user=xzr7na8AAAAJ&hl=en" target="_blank">Scholar</a>
+                    </div><br>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            make_navbar("About");
+            insert_footer();
+        });
+    </script>
+
+</body>
+</html>

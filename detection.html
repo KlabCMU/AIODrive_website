@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>All-In-One Drive</title>
+        
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="resources/tablesorter/css/theme.blue.css">
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="resources/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="resources/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+	<script src="resources/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+
+	<script id="js">$(function() {
+
+	// hide child rows
+	$('.tablesorter-childRow td').hide();
+
+	$(".tablesorter")
+		.tablesorter({
+			theme : 'blue',
+			// this is the default setting
+			cssChildRow: "tablesorter-childRow"
+		})
+		.tablesorterPager({
+			container: $("#pager"),
+			positionFixed: false
+		});
+
+	// Toggle child row content (td), not hiding the row since we are using rowspan
+	// Using delegate because the pager plugin rebuilds the table after each page change
+	// "delegate" works in jQuery 1.4.2+; use "live" back to v1.3; for older jQuery - SOL
+	$('.tablesorter').delegate('.toggle', 'click' ,function() {
+
+		// use "nextUntil" to toggle multiple child rows
+		// toggle table cells instead of the row
+		$(this).closest('tr').nextUntil('tr:not(.tablesorter-childRow)').find('td').toggle();
+		return false;
+	});
+});</script>
+    
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main role="main">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="about-group-name">3D Object Detection</h1>
+        </div>
+        
+        <div class="col-md-12">
+            <h1><strong>Leaderboard</strong></h1>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#velo">Velodyne-64</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lv1">Dense Level 1</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lv2">Dense Level 2</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#lv3">Dense Level 3</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#spad">SPAD-LiDAR</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#spad">Open-World</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="velo" class="tab-pane fade in show active border-left border-bottom border-right">
+                    <table id="tablevelo" class="table table-striped table-hover table-sm nowrap tablesorter" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle; text-align:left;">Upload Date</th>
+                        <th rowspan="2" style="vertical-align: middle; text-align:left;">Method Name</th>
+                        <th rowspan="2" style="vertical-align: middle; text-align:left;">Additional Inputs</th>
+                        <th rowspan="2" style="vertical-align: middle; text-align:left;">mAP</th>
+                        <th colspan="3" style="vertical-align: middle; text-align:center;">AP / Car</th>
+                        <th colspan="3" style="vertical-align: middle; text-align:center;">AP / Pedestrian</th>
+                        <th colspan="3" style="vertical-align: middle; text-align:center;">AP / Cyclist</th>
+                    </tr>
+                    <tr>
+                        <th style="vertical-align: middle; text-align:right;">Easy</th>
+                        <th style="vertical-align: middle; text-align:right;">Moderate</th>
+                        <th style="vertical-align: middle; text-align:right;">Hard</th>
+                        <th style="vertical-align: middle; text-align:right;">Easy</th>
+                        <th style="vertical-align: middle; text-align:right;">Moderate</th>
+                        <th style="vertical-align: middle; text-align:right;">Hard</th>
+                        <th style="vertical-align: middle; text-align:right;">Easy</th>
+                        <th style="vertical-align: middle; text-align:right;">Moderate</th>
+                        <th style="vertical-align: middle; text-align:right;">Hard</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="myleft">2020-06-25</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">SECOND</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">65.70</td>
+                        <td>81.35</td><td>79.38</td><td>70.57</td>
+                        <td>62.32</td><td>59.23</td><td>54.34</td>
+                        <td>61.45</td><td>58.49</td><td>52.86</td>
+                    </tr>
+                    <tr class="tablesorter-childRow">
+                    <td colspan="13">
+                        <br>
+                        <p>Authors: Yan Yan<sup>1, 2</sup>, Yuxing Mao<sup>1</sup>, and Bo Li<sup>2</sup></p>
+                        <p>Affiliation: (1) Chongqing University (2) TrunkTech Co., Ltd</p>
+                        <p>Descriptions: LiDAR-based or RGB-D-based object detection is used in numerous applications, ranging from autonomous driving to robot vision. Voxel-based 3D convolutional networks have been used for some time to enhance the retention of information when processing point cloud LiDAR data. However, problems remain, including a slow inference speed and low orientation estimation performance. We therefore investigate an improved sparse convolution method for such networks, which significantly increases the speed of both training and inference. We also introduce a new form of angle loss regression to improve the orientation estimation performance and a new data augmentation approach that can enhance the convergence speed and performance. The proposed network produces state-of-the-art results on the KITTI 3D object detection benchmarks while maintaining a fast inference speed.</p>
+                        <p>Project URL: N/A</p>
+                        <p>Paper URL: <a href="https://www.mdpi.com/1424-8220/18/10/3337" target="_blank">https://www.mdpi.com/1424-8220/18/10/3337</a></p>
+                        <p>More results: Precision-recall curve, recall-over-#points curve, etc, table for 2D, BEV results</p>
+                    </td></tr>                        
+                        
+                    <tr>
+                        <td class="myleft">2020-06-25</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">PointPillars</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">58.46</td>
+                        <td>80.86</td><td>77.39</td><td>69.77</td>
+                        <td>55.37</td><td>47.79</td><td>40.94</td>
+                        <td>60.72</td><td>50.20</td><td>46.35</td>
+                    </tr>
+                    <tr class="tablesorter-childRow">
+                    <td colspan="13">
+                        <br>
+                        <p>Authors: Yan Yan<sup>1, 2</sup>, Yuxing Mao<sup>1</sup>, and Bo Li<sup>2</sup></p>
+                        <p>Affiliation: (1) Chongqing University (2) TrunkTech Co., Ltd</p>
+                        <p>Descriptions: LiDAR-based or RGB-D-based object detection is used in numerous applications, ranging from autonomous driving to robot vision. Voxel-based 3D convolutional networks have been used for some time to enhance the retention of information when processing point cloud LiDAR data. However, problems remain, including a slow inference speed and low orientation estimation performance. We therefore investigate an improved sparse convolution method for such networks, which significantly increases the speed of both training and inference. We also introduce a new form of angle loss regression to improve the orientation estimation performance and a new data augmentation approach that can enhance the convergence speed and performance. The proposed network produces state-of-the-art results on the KITTI 3D object detection benchmarks while maintaining a fast inference speed.</p>
+                        <p>Project URL: N/A</p>
+                        <p>Paper URL: <a href="https://www.mdpi.com/1424-8220/18/10/3337" target="_blank">https://www.mdpi.com/1424-8220/18/10/3337</a></p>
+                        <p>More results: Precision-recall curve, recall-over-#points curve, etc</p>
+                    </td></tr>                    
+
+                    <tr>
+                        <td class="myleft">2020-06-25</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">PointRCNN</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">61.85</td>
+                        <td>78.13</td><td>77.99</td><td>73.63</td>
+                        <td>58.73</td><td>53.71</td><td>44.74</td>
+                        <td>59.03</td><td>53.85</td><td>49.36</td>
+                    </tr>
+                    <tr class="tablesorter-childRow">
+                    <td colspan="13">
+                        <br>
+                        <p>Authors: Yan Yan<sup>1, 2</sup>, Yuxing Mao<sup>1</sup>, and Bo Li<sup>2</sup></p>
+                        <p>Affiliation: (1) Chongqing University (2) TrunkTech Co., Ltd</p>
+                        <p>Descriptions: LiDAR-based or RGB-D-based object detection is used in numerous applications, ranging from autonomous driving to robot vision. Voxel-based 3D convolutional networks have been used for some time to enhance the retention of information when processing point cloud LiDAR data. However, problems remain, including a slow inference speed and low orientation estimation performance. We therefore investigate an improved sparse convolution method for such networks, which significantly increases the speed of both training and inference. We also introduce a new form of angle loss regression to improve the orientation estimation performance and a new data augmentation approach that can enhance the convergence speed and performance. The proposed network produces state-of-the-art results on the KITTI 3D object detection benchmarks while maintaining a fast inference speed.</p>
+                        <p>Project URL: N/A</p>
+                        <p>Paper URL: <a href="https://www.mdpi.com/1424-8220/18/10/3337" target="_blank">https://www.mdpi.com/1424-8220/18/10/3337</a></p>
+                        <p>More results: Precision-recall curve, recall-over-#points curve, etc</p>
+                    </td></tr>
+                        
+                    <tr>
+                        <td class="myleft">2020-11-14</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">Part-A2</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">68.67</td>
+                        <td>86.11</td><td>77.08</td><td>74.39</td>
+                        <td>82.37</td><td>79.01</td><td>77.34</td>
+                        <td>55.07</td><td>49.93</td><td>49.61</td>
+                    </tr>
+
+                    <tr>
+                        <td class="myleft">2020-11-14</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">Point-GNN</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">64.38</td>
+                        <td>77.36</td><td>65.62</td><td>62.96</td>
+                        <td>79.91</td><td>75.68</td><td>73.09</td>
+                        <td>56.05</td><td>51.83</td><td>50.89</td>
+                    </tr>
+                        
+                    <tr>
+                        <td class="myleft">2020-11-14</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">3D-SSD</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">66.70</td>
+                        <td>79.48</td><td>67.42</td><td>64.70</td>
+                        <td>79.40</td><td>74.60</td><td>74.41</td>
+                        <td>63.18</td><td>58.07</td><td>55.81</td>
+                    </tr>
+                        
+                    <tr>
+                        <td class="myleft">2020-11-14</td>
+                        <td class="myleft"><a href="#" style="color:black" class="toggle">PV-RCNN</a></td>
+                        <td class="myleft">None</td>
+                        <td class="mymiddle">71.89</td>
+                        <td>88.56</td><td>79.73</td><td>77.08</td>
+                        <td>88.10</td><td>85.35</td><td>84.64</td>
+                        <td>55.71</td><td>50.59</td><td>50.52</td>
+                    </tr>                        
+                        
+                    </tbody>
+                    </table>       
+                    
+                    <br>
+                    <div id="pager" class="pager">
+                      <form>
+                        <input type="button" value="&lt;&lt;" class="first" />
+                        <input type="button" value="&lt;" class="prev" />
+                        <input type="text" class="pagedisplay"/>
+                        <input type="button" value="&gt;" class="next" />
+                        <input type="button" value="&gt;&gt;" class="last" />
+                        <select class="pagesize">
+                          <option selected="selected"  value="10">10</option>
+                          <option value="20">20</option>
+                          <option value="30">30</option>
+                          <option value="40">40</option>
+                        </select>
+                      </form>
+                    </div>
+                </div>
+                <div id="lv1" class="tab-pane fade border-left border-bottom border-right">
+                </div>
+                <div id="lv2" class="tab-pane fade border-left border-bottom border-right">
+                </div>
+                <div id="lv3" class="tab-pane fade border-left border-bottom border-right">
+                </div>
+                <div id="spad" class="tab-pane fade border-left border-bottom border-right">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    <div class="row">
+        <div class="col-md-12">
+            <h1><strong>Instructions</strong></h1> 
+            <p>
+            Here we provide guideline to users for the 3D object detection task on AIODrive dataset. The goal of 3D detection on AIODrive dataset is to obtain accurate three-dimentional bounding boxes for three traffic participants: Car, Pedestrian, Cyclist.  
+            </p>
+            <h4><strong>Participation</strong></h4>
+            <p>
+            The AIODrive detection evaluation server is open all year round for submission. To participate in the challenge, please create an account at EvalAI, then upload your zipped result file following the submission rule and results format explained below. After we process your uploaded results, it will be exported to our leaderboard shown above, including results for object detection in 3D, bird's eye view and 2D space. This is the only way to benchmark your method against the test set on AIODrive dataset.
+            </p>            
+            <h4><strong>Evaluation protocol</strong></h4>
+            <p>
+            We primarily use the mAP (mean Average Precision) to rank methods submitted by users. The mAP is computed by averaging the AP over three object categories. Specifically, for each object category, we define three difficulty levels based on the distance of the ground truth object to the ego-vehicle: 0-40 meters for easy, 40-80 meters for moderate, 80-120 meters for hard. Following KITTI convention, we use a 3D IoU (Intersection of Union between predicted and ground truth boxes) threshold of 0.7 for car, and 0.5 for pedestrian and cyclist, to find the true positive and compute the AP. Also, heavily occluded objects (the number of points inside the ground truth box is less than 5) are not required to be detected, i.e., missing detecting such objects will not cause a FN (false negatigve) while detecting such objects will not cause a FP (false positive). 
+            </p>
+            <h4><strong>Submission rules</strong></h4>
+            <ul>
+                <li>We release annotations only for the train and val sets, but not for the test set.</li>
+                <li>We release sensor data for train, val and test sets.</li>
+                <li>Users make predictions on the test set and submit the results to our evaluation server, which returns the metrics listed in the leaderboard.</li>
+                <li>Every submission must follow the results format which includes the information about the method.</li>
+                <li>We encourage user to release code, but do not make it a requirement.</li>
+                <li>Top leaderboard entries and their papers will be manually reviewed.</li>
+                <li>Each user or team can have at most one one account on the evaluation server.</li>
+                <li>Each user or team can submit at most 3 results per month, which can either come from a same method or different methods. Invalid submissions do not count against this total.</li>
+            </ul>
+
+            <h4><strong>Leaderboard tracks</strong></h4>
+            <p>
+            To benchmark the performance of 3D detection algorithms with respect to the density of point cloud data, we feature five tracks each requiring users to use point cloud data with a different density level. In these five tracks, users are allowed to other available data provided in the dataset such as RGB images, Radar, IMU, GPS and Map data, while not allowed to use any external data for pre-training or data augmentation. In addition to the five tracks with restriction to the use of data, we also feature an open-world track which does not have constraint on any data used. 
+            </p>
+            Velodyne-64 track
+            <ul>
+                <li>Users are required to use the Velodyne-64 LiDAR point cloud. Other point cloud data such as dense LiDAR or SPAD-LiDAR is NOT allowed.</li>
+                <li>Provided data from other modalies such as RGB, Radar, IMU, GPS and Map data is allowed to use.</li>
+                <li>External data (from other datasets) is NOT allowed</li>
+            </ul>
+            Dense level 1 track
+            <ul>
+                <li>Users are required to use the Dense level 1 point cloud. Other point cloud data is NOT allowed.</li>
+                <li>Provided data from other modalies such as RGB, Radar, IMU, GPS and Map data is allowed to use.</li>
+                <li>External data (from other datasets) is NOT allowed</li>
+            </ul>
+            Dense level 2 track
+            <ul>
+                <li>Users are required to use the Dense level 2 point cloud. Other point cloud data is NOT allowed.</li>
+                <li>Provided data from other modalies such as RGB, Radar, IMU, GPS and Map data is allowed to use.</li>
+                <li>External data (from other datasets) is NOT allowed</li>
+            </ul>
+            Dense level 3 track
+            <ul>
+                <li>Users are required to use the Dense level 3 point cloud. Other point cloud data is NOT allowed.</li>
+                <li>Provided data from other modalies such as RGB, Radar, IMU, GPS and Map data is allowed to use.</li>
+                <li>External data (from other datasets) is NOT allowed</li>
+            </ul>
+            SPAD-LiDAR track
+            <ul>
+                <li>Users are required to use the SPAD-LiDAR point cloud. Other point cloud data is NOT allowed.</li>
+                <li>Provided data from other modalies such as RGB, Radar, IMU, GPS and Map data is allowed to use.</li>
+                <li>External data (from other datasets) is NOT allowed</li>
+            </ul>
+            Open World track
+            <ul>
+                <li>Any data is allowed, including data from AIODrive or external datasets</li>
+            </ul>
+            
+            <h4><strong>Results format</strong></h4>
+            <p>
+            Following the KITTI convention, we require that all files must be submitted in the root directory of a zip file using the format described below. Specifically, the submitted files are expected to be the following: 1) a file named meta.txt including the meta information of the submitted method; 2) a list of files including detection results, one file per frame where the file name must be the exactly same as the frame number with zero appropriately padded in front. To help user understand the folder structure of the submitted files, please see an example below:
+            </p>
+            
+            <div style="background-color:lightgray; padding: 20px">
+                root<br>
+                ├── meta.txt<br>
+                ├── 000000.txt<br>
+                ├── 000001.txt<br>
+                &vellip;<br>
+                └── 200000.txt
+            </div>
+            <br>
+            
+            <p>Inside the meta.txt, the users are expected to include a list of information shown below: </p>
+            <ol>
+                <li>Authors: author full names separated by commas, with each author name followed by the number of the affiliation.</li>
+                <li>Affiliations: a list of authors' affiliations.</li>
+                <li>Short Method Name: a short name of the submitted method (10 characters at most).</li>
+                <li>Full Method Name: the title of the submitted method, e.g., the amazing 3D detection method.</li>
+                <li>Track: the challenge track to be evaluated, e.g., the Velodyne-64 track.</li>
+                <li>Additional Inputs: other input data used in addition to the point cloud allowed in the track, e.g., RGB, Radar, IMU, GPS, Map.</li>
+                <li>Description: a brief description of the method, e.g., the abstract of the paper.</li>
+                <li>Project URL: a link to the project website, N/A if not ready.</li>
+                <li>Paper URL: a link to the paper, N/A if not ready.</li>
+                <li>Code URL: a link to the code, N/A if not ready.</li>
+            </ol>
+            <p>We expect one line per above information in the meta.txt. Except for the last three URLs which the authors can update later, the authors are required to provide the first 7 information during submission. Below is an example of a valid meta.txt file:
+            </p>
+            
+            <div style="background-color:lightgray; padding: 20px">
+                Authors: Xinshuo Weng [1], Yunze Man [1], Dazhi Cheng [1], Jinhyung Park [1], Matthew O'Toole [1], Kris Kitani [1]<br>
+                Affiliations: [1] Carnegie Mellon University<br>
+                Short Method Name: AIODrive<br>
+                Full Method Name: All-in-One Drive: A Large-Scale and Comprehensive Perception Dataset with High-Density Long-Range Point Cloud<br>
+                Track: Velodyne-64<br>
+                Additional Inputs: RGB, Radar, IMU.<br>
+                Description: Data is a critical aspect of modern day automation such as autonomous driving. Though various datasets have been released to advance perception systems for autonomous driving, these datasets often have different use cases because they provide different annotations, sensors and environmental variations such as 3D segmentation (SemanticKITTI), rich maps (Argoverse), radar sensing (nuScenes), high-speed driving (A*3D), adverse weather and large-scale data (Waymo). Al7 though each of these datasets has its use cases, we are still in need of a large-scale dataset that forms a union of the various strengths of currently available datasets to innovate multi-sensor multi-task perception systems. To begin to address this challenge, we present the AIODrive dataset, a synthetic large-scale dataset that provides comprehensive sensing modalities, annotations and driving environmental variations for perception in autonomous driving. Specifically, we provide (1) eight sensor types (RGB, Stereo, Depth, LiDAR, SPAD-LiDAR, Radar, IMU, GPS), among which the LiDAR and SPAD-LiDAR sensors provide high-density (e.g., 4,000,000 points per frame) and long-range (e.g., 1000 meters) point cloud, with much higher point density and sensing range than standard LiDAR (e.g., Velodyne-64), (2) support annotations for all mainstream perception tasks (e.g., 2D and 3D object detection, 2D and 3D multi-object tracking, 2D and 3D semantic, instance and panoptic segmentation, depth prediction), and (3) provide rare driving sce20 narios such as adverse weather and lighting conditions, highly-crowded scenes, high-speed driving and car accidents. The broader impact of the AIODrive dataset is to give researchers with various levels of resources access to a comprehensive dataset for developing perception algorithms for autonomous driving.<br>
+                Project URL: N/A<br>
+                Paper URL: https://www.mdpi.com/1424-8220/18/10/3337<br>
+                Code URL: N/A<br>
+            </div>
+            <br>
+
+            <p>In addition to submit a valid file for meta information, users must provide valid detection results to be evaluated. For each detection file, the following rule must be followed:</p>
+            <ol>
+                <li>One line per detected object. </li>
+                <li>For each line, users must provide 13 columns: Object type, x1, y1, x2, y2, l, w, h, x, y, z, theta, confidence. Each column is seperated by a white space. The object type can only be one of three classes: Car, Pedestrian, Cyclist. x1, y1, x2, y2 are the top left and bottom right coreners of the 2D bounding box on the image. l, w, h are the dimention of the object in 3D space. x, y, z is the object center and theta is the heading orientation on the ground in the 3D camera coordinate. Lastly, the confience score represents how confident the object is a true positive, and should be normalized between 0 to 1.</li>
+                <li>Users must limit the number of objects per file to 500, i.e., 500 lines at most.</li>
+            </ol>
+            <p>Below is an example of a valid 000000.txt file:
+            </p>
+            
+            <div style="background-color:lightgray; padding: 20px">
+                Car -1 -1 1.9915 670.9523 173.6717 725.5098 199.2096 1.4423 1.6356 4.2744 5.2958 1.4941 43.1440 2.1136 6.9661<br>
+                Car -1 -1 -1.5899 722.7018 173.6370 799.2494 250.9838 1.6288 1.5972 3.7714 3.4998 1.6500 17.2306 -1.3895 4.7823<br>
+                Car -1 -1 -0.0933 865.2654 165.3422 996.5103 217.9514 1.4933 1.5444 3.4788 9.5141 1.2804 21.7565 0.3189 2.1775<br>
+                Car -1 -1 -1.1149 735.3035 168.8577 775.0657 187.3230 1.4774 1.6207 4.0381 12.0452 1.1580 59.8233 -0.9162 1.7200<br>
+                Car -1 -1 -0.6085 879.8491 162.5352 1088.3078 237.1295 1.5916 1.6432 4.0137 8.4169 1.3718 16.4789 -0.1363 1.1655<br>
+            </div>
+            <br>
+            <p>Failure to follow the above format for meta information and detection results will lead to invalid submission and the results might not be able to be exported to the leaderboard.</p>
+            
+        </div>
+    </div>
+        
+    <hr class="featurette-divider">
+            
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="footer"></footer>
+<script src="main.js"></script>
+<script>
+    $(document).ready(function () {
+        make_navbar("Tasks");
+        insert_footer();
+    });
+</script>
+    
+</body>
+</html>

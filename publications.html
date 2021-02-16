@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <title>All-In-One Drive</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="main.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main role="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="about-group-name">Publications</h1>
+                    <p>The page includes all our publications related to the All-In-One Drive dataset.</p> 
+                </div>
+            </div>
+            
+            <!--CMU All-in-One Drive: An Large-Scale and All-Inclusive Driving Dataset with High-Density and Long-Range LiDAR-->
+            <div class="row">
+                
+            <div class="col-lg-3 col-md-3"><img src="http://www.xinshuoweng.com/papers/AIODrive/main.png" class="shadow" width="270" height="200" style="border-style: none"></div>
+            <div class="col-lg-9 col-md-9">
+                <p><strong>All-In-One Drive: A Large-Scale Comprehensive Perception Dataset with High-Density Long-Range<br> Point Clouds</strong>
+                <br>Xinshuo Weng, Yunze Man, Dazhi Cheng, Jinhyung Park, Matthew O'Toole, Kris Kitani
+                <br><i>in Submission</i>, 2020
+                <br>
+                <a href="http://www.xinshuoweng.com/papers/AIODrive/arXiv.pdf" target="_blank">PDF</a> | 
+                <a href="https://github.com/xinshuoweng/AIODrive" target="_blank">Code</a> | 
+                <a href="index.html" target="_blank">Website</a> |
+                <a href="http://www.xinshuoweng.com/bibtex/AIODrive.txt" target="_blank">BibTex</a>
+            </div>
+            </div>
+            
+            <!--3D Multi-Object Tracking: A Baseline and New Evaluation Metrics-->
+            <div class="row">
+            <div class="col-lg-3 col-md-3"><img src="http://www.xinshuoweng.com/papers/AB3DMOT/main.gif" class="shadow" width="270" height="150" style="border-style: none"></div>
+            <div class="col-lg-9 col-md-9">
+                <strong>3D Multi-Object Tracking: A Baseline and New Evaluation Metrics</strong>
+                <br>Xinshuo Weng, Jianren Wang, David Held, Kris Kitani
+                <br><i>IEEE/RSJ International Conference on Intelligent Robots and Systems (<b>IROS</b>)</i>, 2020
+                <br>
+                <a href="http://www.xinshuoweng.com/papers/AB3DMOT/proceeding.pdf" target="_blank">PDF</a> | 
+                <a href="https://github.com/xinshuoweng/AB3DMOT" target="_blank">Code</a> | 
+                <a href="#AB3D" onclick="lightbox_open('AB3D','lightAB3D','fadeAB3D');">Demo</a> | 
+                <a href="http://www.xinshuoweng.com/projects/AB3DMOT" target="_blank">Website</a> |
+                <a href="http://www.xinshuoweng.com/papers/AB3DMOT/slides.pdf" target="_blank">Slides</a> | 
+                <a href="http://www.xinshuoweng.com/bibtex/AB3DMOT.txt" target="_blank">BibTex</a>
+            </div>
+            </div><br>
+            
+            <hr class="featurette-divider">
+            
+   
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            make_navbar("Resources");
+            insert_footer();
+        });
+    </script>
+</body>
+
+</html>

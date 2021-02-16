@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <title>All-In-One Drive</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="main.css" rel="stylesheet">
+    <link href="prism.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+
+    <main role="main">
+
+        <div class="hero-image">
+            <div class="overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"
+                poster="resources/home/demo_image.jpg">
+                <source src="resources/home/demo.mp4" type="video/mp4">
+            </video>
+            <div class="container h-100">
+                <div class="d-flex h-100 text-center align-items-center">
+                    <div class="w-100 text-light">
+                        <h1 class="hero-header">
+                            <span id="logo">All-in-One Drive </span>
+                        </h1>
+                        <span class="lead mb-0"><h2>A Large-Scale Comprehensive Perception Dataset with High-Density Long-Range Point Clouds</h2></span>
+                        <div class="m-auto"><button class="mt-5 invisible" id="play-btn"><i class="fa fa-play"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="featurette-heading" id="news">News</h2>
+                    <div class="col-md-12">
+                        <table>
+                            <tr>
+                                <td class="date"><b>Feb 22, 2021</b></td>
+                                <td class="event">&nbsp;&nbsp;Data released and open to download.</td>
+                            </tr> 
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            <h2 class="featurette-heading" id="features">Features</h2>
+            <div class="row">
+                <div class="col-lg-4 mt-2">
+                    <div class="card text-center mt-2 shadow-sm h-100">
+                        <div class="card-body">
+                            <h2>All-Inclusiveness</h2>
+                            <p class="text-justify mt-4 hyphens-auto" lang="en">We present a new autonomous driving dataset that includes all common sensors with all 360 degree coverage and has recorded diverse data with comprehensive annotation under various weather and lighting conditions. Our dataset is significantly different from existing driving datasets which usually miss more than one type of sensor or data variation or annotation that we have in a single dataset. We believe that our all-in-one driving dataset can be multi-purpose and benefit multi-task learning in autonomous driving, also enabling more opportunities of sensor fusion and higher robustness to rare data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mt-2">
+                    <div class="card text-center shadow-sm mt-2 h-100">
+                        <div class="card-body">
+                            <h2>High-Density and Long-Range LiDAR</h2>
+                            <p class="text-justify mt-4 hyphens-auto" lang="en">Our dataset is the first providing LiDAR data at a range of 1000 meters, which is about 10 times beyond the range of existing LiDAR sensors. In the meantime, we provide LiDAR data at a density of 1,000,000 points per frame, which is again about 10 times beyond the density of normal LiDAR data. We believe that our high-density and long-range LiDAR sensor enables more robust and early perception on small objects at far range, which is essential to motion planning and collision avoidance in autonomous driving.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mt-2">
+                    <div class="card text-center shadow-sm mt-2 h-100">
+                        <div class="card-body">
+                            <h2>Large-Scale Data</h2>
+                            <p class="text-justify mt-4 hyphens-auto" lang="en">We collect the data at a large scale with an unprecedented number of the sequences each containing crowded agents, resulting in hundreds of millions of 2D and 3D annotations. To the best of our knowledge, our proposed dataset is the largest driving dataset so far, about 10 times larger than the Waymo open drive dataset. We believe that the large-scale and diverse data collected in our dataset can further improve the performance of perception and prediction models used for autonomous driving, especially when dealing with the rare driving situations. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="featurette-divider">
+
+        </div>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="prism.js"></script>
+    <script src="prism-bibtex.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            make_navbar("Home");
+            insert_footer();
+        });
+    </script>
+    
+</body>
+</html>

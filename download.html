@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <title>CMU All-in-One Drive</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="main.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar"></nav>
+    </header>
+    
+    <main role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about-group-name">Data Download</h1>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+        
+        <h4>Sensor Setup</h4>
+
+      <div class="row">
+        <div class="col-12">
+          <h2 class="featurette-heading" id="download">Download</h2>
+        </div>
+        <div class="col-12">
+          <h4>Semantic Segmentation</h4>
+        </div>
+        <div class="col-12">
+
+          <p>We only provide the label files and the remaining files must be downloaded from the
+            <a href="http://www.cvlibs.net/datasets/kitti/eval_odometry.php">KITTI Vision Benchmark</a>. In
+            particular, the following steps are needed to get the complete data:</p>
+          <ol>
+            <li class="mt-2"><a href="http://www.cvlibs.net/download.php?file=data_odometry_velodyne.zip">Download</a>
+              KITTI Odometry Benchmark Velodyne point clouds (80 GB)</li>
+            <li class="mt-2"><a href="http://www.cvlibs.net/download.php?file=data_odometry_calib.zip">Download</a>
+              KITTI Odometry Benchmark calibration data (1 MB)</li>
+            <li class="mt-2"><a href="assets/data_odometry_labels.zip">Download</a>
+              <span id="logo">SemanticKITTI</span> label data (179 MB)</li>
+            <li class="mt-2">Extract everything into the same folder. The folder structure inside the zip
+              files of our labels matches the folder structure of the original data.</li>
+          </ol>
+        </div>
+
+        <div class="col-12">
+          <h4>Semantic Scene Completion</h4>
+        </div>
+        <div class="col-12">
+          <p>We provide the voxel grids for learning and inference, which you must
+            <a href="assets/data_odometry_voxels.zip">download</a> to get the <span id="logo">SemanticKITTI</span> voxel
+            data (700 MB).
+            This archive contains the training (all files) and test data (only bin files).
+            Refer to the development kit to see how to read our binary files.
+          </p>
+        </div>
+      </div>
+
+        
+    </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="prism.js"></script>
+    <script src="prism-bibtex.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $(document).ready(function () {
+            make_navbar("Home");
+            insert_footer();
+        });
+    </script>
+    
+</body>
+</html>

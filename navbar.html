@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+<link href="main.css" rel="stylesheet">
+</head>
+
+<style>
+a.dropdown-item {
+    font-size: 1.2em    
+    }
+    
+a.nav-link {
+    font-size: 1.2em    
+}
+
+</style>
+    
+<body>    
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top shadow-lg bg-dark" id="main-navbar">
+    <a class="navbar-brand" href="index.html">
+    <img src="resources/navbar/logo.png" id="logo" style="height:45px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="flex-row top-navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html" id="Home">Home</a>
+                <ul class="navbar-sub-nav mr-auto sub-navbar-toggler"></ul>
+            </li>
+                
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="overview.html" id="AIODrive" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">AIODrive</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="overview.html">Overview</a>
+                    <a class="dropdown-item" href="sensor.html">Sensor Setup and Data Collection</a>
+                    <a class="dropdown-item" href="diversity.html">Data Diversity</a>
+                    <a class="dropdown-item" href="annotation.html">Data Annotataion</a>
+                    <a class="dropdown-item" href="download.html">Data Download</a>
+                </div>
+            </li>
+                
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="detection.html" id="Tasks" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">Tasks</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="detection.html">3D Object Detection</a>
+                    <a class="dropdown-item" href="tracking.html">3D Multi-Object Tracking</a>
+                    <a class="dropdown-item" href="forecasting.html">Trajectory Forecasting</a>
+                </div>
+            </li>
+    
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="publications.html" id="Resources" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="publications.html">Publications</a>
+                    <a class="dropdown-item" href="https://github.com/xinshuoweng/AIODrive" target="_blank">Code</a>
+                </div>
+            </li>
+                
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="team.html" id="About" role="button" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="team.html">Team</a>
+                    <a class="dropdown-item" href="license.html">License</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+    
+    
+<script type="text/JavaScript" language="JavaScript">
+const $dropdown = $(".dropdown");
+const $dropdownToggle = $(".dropdown-toggle");
+const $dropdownMenu = $(".dropdown-menu");
+const showClass = "show";
+ 
+$dropdown.hover(
+  function() {
+    const $this = $(this);
+    $this.addClass(showClass);
+    $this.find($dropdownToggle).attr("aria-expanded", "true");
+    $this.find($dropdownMenu).addClass(showClass);
+  },
+  function() {
+    const $this = $(this);
+    $this.removeClass(showClass);
+    $this.find($dropdownToggle).attr("aria-expanded", "false");
+    $this.find($dropdownMenu).removeClass(showClass);
+  }
+)
+</script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+</body>
+</html>
